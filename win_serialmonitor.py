@@ -21,7 +21,7 @@ class MainWindow(QMainWindow, Ui_Dialog):
         self.pushButton.clicked.connect(self.butten_Click)
 
     def butten_Click(self):
-        pass
+        self.textBrowser.append("this is a trst progam.")
 
     def my_fn1(self):
         pass
