@@ -21,7 +21,7 @@ model = tf.keras.models.Sequential([
 
 model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
 
-model.fit(np.array(xdata), np.array(ydata), epochs=30)
+model.fit(np.array(xdata), np.array(ydata), epochs=500)
 
 #추론
 예측값 = model.predict(np.array([[750, 3.70, 3], [800, 4.0, 1]]))
