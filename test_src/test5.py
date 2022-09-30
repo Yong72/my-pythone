@@ -1,3 +1,4 @@
+#함수 
 def my_fun1(a, b, c):
     pass
 

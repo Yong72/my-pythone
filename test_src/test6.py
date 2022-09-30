@@ -1,3 +1,4 @@
+#함수에 인자를 전달하고 return값을 출력
 def add(a, b):
     return a + b
 
