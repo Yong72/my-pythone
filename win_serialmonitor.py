@@ -1,13 +1,14 @@
 #윈도우 창을 이용해서 아두이노 시리얼 모니터를 띄운다
 
 import sys
+
 from turtle import width
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
-
 from gui_serialmonitor import Ui_Dialog
 
+#윈도우 창
 class MainWindow(QMainWindow, Ui_Dialog):
     def __init__(self, width0, height0, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
@@ -19,13 +20,13 @@ class MainWindow(QMainWindow, Ui_Dialog):
         self.setGeometry(10, 30, self.width0, self.height0)
 
         self.pushButton.clicked.connect(self.butten_Click)
-
+    #클릭 이벤트
     def butten_Click(self):
         self.textBrowser.append("this is a test progam.")
     
     def my_fn1(self):
         pass
-
+#비정상 종료 방지
 app1 = QApplication.instance()
 if app1 is None:
     app1 = QApplication(sys.argv)
