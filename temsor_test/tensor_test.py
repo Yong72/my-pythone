@@ -14,7 +14,7 @@ for i, rows in data.iterrows():
 #rank: 대학 순위(낮을 수록 좋음)
 #admit: 합격 여부(0: 불합격, 1: 합격)
 
-#신경망 구축
+#신경망 레이어 추가
 model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(32, activation='elu'),
     tf.keras.layers.Dense(64, activation='leaky_relu'),
