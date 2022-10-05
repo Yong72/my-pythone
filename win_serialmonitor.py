@@ -22,7 +22,7 @@ class MainWindow(QMainWindow, Ui_Dialog):
         self.pushButton.clicked.connect(self.butten_Click)
     #클릭 이벤트
     def butten_Click(self):
-        self.textBrowser.append("this is a trst progam.")
+        self.textBrowser.append("this is a test progam.")
 
     def my_fn1(self):
         pass
