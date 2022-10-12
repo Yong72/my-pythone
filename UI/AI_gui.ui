@@ -1617,7 +1617,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_82">
+  <widget class="QLabel" name="la_w_h102_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1636,7 +1636,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_83">
+  <widget class="QLabel" name="la_w_h103_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1655,7 +1655,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_84">
+  <widget class="QLabel" name="la_w_h104_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1674,7 +1674,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_85">
+  <widget class="QLabel" name="la_w_h105_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1693,7 +1693,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_86">
+  <widget class="QLabel" name="la_w_h106_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1712,7 +1712,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_87">
+  <widget class="QLabel" name="la_w_h107_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1731,7 +1731,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_88">
+  <widget class="QLabel" name="la_w_h108_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1750,7 +1750,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_89">
+  <widget class="QLabel" name="la_w_h109_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1769,7 +1769,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_90">
+  <widget class="QLabel" name="la_w_h110_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1807,7 +1807,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_92">
+  <widget class="QLabel" name="la_w_h111_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1826,7 +1826,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_93">
+  <widget class="QLabel" name="la_w_h112_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1845,7 +1845,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_94">
+  <widget class="QLabel" name="la_w_h113_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1864,7 +1864,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_95">
+  <widget class="QLabel" name="la_w_h114_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1883,7 +1883,7 @@
     <string>TextLabel</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_96">
+  <widget class="QLabel" name="la_w_h115_out1">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -1956,7 +1956,7 @@
     </font>
    </property>
    <property name="text">
-    <string>LOSS = Lable - Out</string>
+    <string>ERR = Lable - Out</string>
    </property>
   </widget>
   <widget class="QLabel" name="la_error1">
@@ -1994,7 +1994,7 @@
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>000</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_98">
@@ -2013,7 +2013,7 @@
     </font>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string>000</string>
    </property>
   </widget>
   <widget class="QLabel" name="la_target1">
@@ -2043,6 +2043,25 @@
      <width>48</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la_w_h116_out1">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>370</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>6</pointsize>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>TextLabel</string>
