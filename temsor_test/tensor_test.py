@@ -22,7 +22,7 @@ model = tf.keras.models.Sequential([
 ])
 #학습
 model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
-model.fit(np.array(xdata), np.array(ydata), epochs=250)
+model.fit(np.array(xdata), np.array(ydata), epochs=64)
 
 #추론
 inference = model.predict(np.array([[750, 3.70, 3], [800, 4.0, 1], [100, 2.0, 1], [600, 2.0, 4], [800, 3.0, 2]]))
