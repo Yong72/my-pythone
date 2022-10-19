@@ -27,7 +27,7 @@ class MainWindow(QMainWindow, Ui_Dialog):
         
         self.width0, self.height0 = width0, height0
         self.setGeometry(10, 30, self.width0, self.height0)
-
+    
         self.pushButton.clicked.connect(self.butten_Click)
     #클릭 이벤트
     def butten_Click(self):
