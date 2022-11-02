@@ -26,7 +26,7 @@ class Ui_Form(object):
         self.backgraund = QLabel(Form)
         self.backgraund.setObjectName(u"backgraund")
         self.backgraund.setGeometry(QRect(10, 10, 960, 540))
-        self.backgraund.setPixmap(QPixmap(u"Slide2.jpg"))
+        self.backgraund.setPixmap(QPixmap(u"image/Slide2.jpg"))
         self.backgraund.setScaledContents(True)
         self.pushButton_1 = QPushButton(Form)
         self.pushButton_1.setObjectName(u"pushButton_1")
