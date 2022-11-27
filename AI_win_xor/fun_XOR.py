@@ -5,7 +5,7 @@ from keras.layers import Dense
 # from keras.callbacks import LambdaCallback 
 from keras import backend as K   # https://faroit.com/keras-docs/2.0.8/activations/ 
 
-import My_xor # import    
+import fun_XOR # import    
 
 # 2. 입력/출력 데이터 만들기 + model 생성 
 X2 = np.array([[0,0],[1,0],[0,1],[1,1]]) 
@@ -36,7 +36,7 @@ def fit_model(EPOCHS) :       # 6. 학습시키기
     # model_2.fit(X2,Y2, batch_size=1, epochs=1500, shuffle=True, verbose=0, callbacks=[gui_XOR_220722.batch_print_callback, gui_XOR_220722.print_weights]) 
     # model_2.fit(X2,Y2, batch_size=1, epochs=1500, shuffle=True, verbose=0, callbacks=[gui_XOR_220722.print_weights]) 
     # model_2.fit(X2,Y2, batch_size=1, epochs=EPOCHS, shuffle=True, verbose=0, callbacks=[gui_XOR_220722.print_weights]) 
-    model_2.fit(X2,Y2, batch_size=1, epochs=EPOCHS, shuffle=True, verbose=0, callbacks=[My_xor.print_weights]) 
+    model_2.fit(X2,Y2, batch_size=1, epochs=EPOCHS, shuffle=True, verbose=0, callbacks=[fun_XOR.print_weights]) 
 
 def test_model() :      # 7. 모델 테스트하기1 
     test = np.array([[0,0],[1,0],[0,1],[1,1]])  # test data 입력 

@@ -6,18 +6,9 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 #qt disinener
 from gui_xor import Ui_Form
-# serial  
-import threading 
-import signal 
-import serial
-# (check point) pip install pyserial
-
-line = [] # 시리얼 통신으로 라인 단위로 데이터 가져올 리스트 변수 
-exitThread = False   # 시리얼 통신 쓰레드 종료용 변수 
-
 
 # keras (XOR) 
-import My_import_gui_XOR
+import fun_XOR
 from keras.callbacks import LambdaCallback 
 from keras import backend as K   # https://faroit.com/keras-docs/2.0.8/activations/ 
 import numpy as np 

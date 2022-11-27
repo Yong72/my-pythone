@@ -1,3 +1,6 @@
+
+#This code are standalone code
+
 # 1. Numpy 가져오기 
 import numpy as np 
 print(np.__version__) 
