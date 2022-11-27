@@ -9,7 +9,7 @@ from gui_xor import Ui_Form
 # serial  
 import threading 
 import signal 
-import serial    
+import serial
 # (check point) pip install pyserial
 
 line = [] # 시리얼 통신으로 라인 단위로 데이터 가져올 리스트 변수 
