@@ -28,7 +28,7 @@ class TimerMessageBox(QMessageBox):
         self.setText("Update the weights") 
         self.setStandardButtons(QMessageBox.NoButton) 
         self.timer = QTimer(self) 
-        self.timer.setInterval(1) 
+        self.timer.setInterval(1)   
         self.timer.timeout.connect(self.changeContent) 
         self.timer.start() 
 
@@ -64,49 +64,44 @@ class MainWindow(QMainWindow, Ui_Form):
 
         global sData 
         for iCount in range(1,151) :  # range(1,151) => 150회 x 10 = 1500 
-            fun_XOR.fit_model(10)
+            fun_XOR.fit_model(10) 
             self.display_weights(iCount)  
 
     def pb2_Clicked(self):
-        #self.display_weights(0)
         fun_XOR.test_model() 
-
         self.display_weights(0) 
-
         f = open("str_weights.txt", 'r') 
         line = f.readline() 
         f.close() 
-        list_weight_bias = line.split(';')  # line은 1줄 문자열이며, ";"으로 구분 가능  
-        float_weight_bias = list(np.float_(list_weight_bias)) 
-
+        list_weight_bios = line.split(';')  # line은 1줄 문자열이며, ";"으로 구분 가능  
+        float_weight_bios = list(np.float_(list_weight_bios)) 
         # lineEdit_1-2 
         sInData1 = self.lineEdit_1.text() 
         sInData2 = self.lineEdit_2.text() 
-        
         sInData = sInData1+';'+ sInData2   # lineEdit로 읽어드린 두 개의 문자열을 구분자(";")를 추가하면서 새로운 한 줄의 문자열로 만듦 
         list_sInData = sInData.split(';')  # 문자열 sInData ";"을 기준으로 쪼개면서 문자열 리스트를 만듦 
         float_InData = list(np.float_(list_sInData)) # 문자열 리스트를 연산이 가능한 실수형 리스트로 데이터형을 변환 
         print("float_InData : ", float_InData)  # print("float_InData : %i" float_InData) # This code has an error. 
-
         # la_x1_h101-116, la_y1_h101-116 
         # la_x1_h101-116 
-        # sum ( 입력값(input) * 가중치(weight) ) + bias 
-        float_x1_h101 = float_InData[0]*float_weight_bias[0] + float_InData[1]*float_weight_bias[16] + float_weight_bias[32]   
-        float_x1_h102 = float_InData[0]*float_weight_bias[1] + float_InData[1]*float_weight_bias[17] + float_weight_bias[33] 
-        float_x1_h103 = float_InData[0]*float_weight_bias[2] + float_InData[1]*float_weight_bias[18] + float_weight_bias[34] 
-        float_x1_h104 = float_InData[0]*float_weight_bias[3] + float_InData[1]*float_weight_bias[19] + float_weight_bias[35]
-        float_x1_h105 = float_InData[0]*float_weight_bias[4] + float_InData[1]*float_weight_bias[20] + float_weight_bias[36]
-        float_x1_h106 = float_InData[0]*float_weight_bias[5] + float_InData[1]*float_weight_bias[21] + float_weight_bias[37]
-        float_x1_h107 = float_InData[0]*float_weight_bias[6] + float_InData[1]*float_weight_bias[22] + float_weight_bias[38]
-        float_x1_h108 = float_InData[0]*float_weight_bias[7] + float_InData[1]*float_weight_bias[23] + float_weight_bias[39]
-        float_x1_h109 = float_InData[0]*float_weight_bias[8] + float_InData[1]*float_weight_bias[24] + float_weight_bias[40]
-        float_x1_h110 = float_InData[0]*float_weight_bias[9] + float_InData[1]*float_weight_bias[25] + float_weight_bias[41]
-        float_x1_h111 = float_InData[0]*float_weight_bias[10] + float_InData[1]*float_weight_bias[26] + float_weight_bias[42]
-        float_x1_h112 = float_InData[0]*float_weight_bias[11] + float_InData[1]*float_weight_bias[27] + float_weight_bias[43]
-        float_x1_h113 = float_InData[0]*float_weight_bias[12] + float_InData[1]*float_weight_bias[28] + float_weight_bias[44]
-        float_x1_h114 = float_InData[0]*float_weight_bias[13] + float_InData[1]*float_weight_bias[29] + float_weight_bias[45]
-        float_x1_h115 = float_InData[0]*float_weight_bias[14] + float_InData[1]*float_weight_bias[30] + float_weight_bias[46]
-        float_x1_h116 = float_InData[0]*float_weight_bias[15] + float_InData[1]*float_weight_bias[31] + float_weight_bias[47]
+        # sum ( 입력값(input) * 가중치(weight) ) + bios 
+        float_x1_h101 = float_InData[0]*float_weight_bios[0] + float_InData[1]*float_weight_bios[16] + float_weight_bios[32]   
+        float_x1_h102 = float_InData[0]*float_weight_bios[1] + float_InData[1]*float_weight_bios[17] + float_weight_bios[33] 
+        float_x1_h103 = float_InData[0]*float_weight_bios[2] + float_InData[1]*float_weight_bios[18] + float_weight_bios[34] 
+        float_x1_h104 = float_InData[0]*float_weight_bios[3] + float_InData[1]*float_weight_bios[19] + float_weight_bios[35]
+        float_x1_h105 = float_InData[0]*float_weight_bios[4] + float_InData[1]*float_weight_bios[20] + float_weight_bios[36]
+        float_x1_h106 = float_InData[0]*float_weight_bios[5] + float_InData[1]*float_weight_bios[21] + float_weight_bios[37]
+        float_x1_h107 = float_InData[0]*float_weight_bios[6] + float_InData[1]*float_weight_bios[22] + float_weight_bios[38]
+        float_x1_h108 = float_InData[0]*float_weight_bios[7] + float_InData[1]*float_weight_bios[23] + float_weight_bios[39]
+        float_x1_h109 = float_InData[0]*float_weight_bios[8] + float_InData[1]*float_weight_bios[24] + float_weight_bios[40]
+        float_x1_h110 = float_InData[0]*float_weight_bios[9] + float_InData[1]*float_weight_bios[25] + float_weight_bios[41]
+        float_x1_h111 = float_InData[0]*float_weight_bios[10] + float_InData[1]*float_weight_bios[26] + float_weight_bios[42]
+        float_x1_h112 = float_InData[0]*float_weight_bios[11] + float_InData[1]*float_weight_bios[27] + float_weight_bios[43]
+        float_x1_h113 = float_InData[0]*float_weight_bios[12] + float_InData[1]*float_weight_bios[28] + float_weight_bios[44]
+        float_x1_h114 = float_InData[0]*float_weight_bios[13] + float_InData[1]*float_weight_bios[29] + float_weight_bios[45]
+        float_x1_h115 = float_InData[0]*float_weight_bios[14] + float_InData[1]*float_weight_bios[30] + float_weight_bios[46]
+        float_x1_h116 = float_InData[0]*float_weight_bios[15] + float_InData[1]*float_weight_bios[31] + float_weight_bios[47]
+
 
         self.la_x1_h101.setText(format(float_x1_h101, ".6f")) 
         self.la_x1_h102.setText(format(float_x1_h102, ".6f")) 
@@ -162,67 +157,60 @@ class MainWindow(QMainWindow, Ui_Form):
 
         # la_x1_out1, la_y1_out1 
         # la_x1_out1 
-        # sum ( 입력값(input) * 가중치(weight) ) + bias 
-        float_x1_out =              + float_y1_h101*float_weight_bias[48]  
-        float_x1_out = float_x1_out + float_y1_h102*float_weight_bias[49]  
-        float_x1_out = float_x1_out + float_y1_h103*float_weight_bias[50]  
-        float_x1_out = float_x1_out + float_y1_h104*float_weight_bias[51]
-        float_x1_out = float_x1_out + float_y1_h105*float_weight_bias[52]
-        float_x1_out = float_x1_out + float_y1_h106*float_weight_bias[53]
-        float_x1_out = float_x1_out + float_y1_h107*float_weight_bias[54]
-        float_x1_out = float_x1_out + float_y1_h108*float_weight_bias[55]
-        float_x1_out = float_x1_out + float_y1_h109*float_weight_bias[56]
-        float_x1_out = float_x1_out + float_y1_h110*float_weight_bias[57]
-        float_x1_out = float_x1_out + float_y1_h111*float_weight_bias[58]
-        float_x1_out = float_x1_out + float_y1_h112*float_weight_bias[59]
-        float_x1_out = float_x1_out + float_y1_h113*float_weight_bias[60]
-        float_x1_out = float_x1_out + float_y1_h114*float_weight_bias[61]
-        float_x1_out = float_x1_out + float_y1_h115*float_weight_bias[62]
-        float_x1_out = float_x1_out + float_y1_h116*float_weight_bias[63]
-        float_x1_out = float_x1_out + float_weight_bias[64] # bias 
+        # sum ( 입력값(input) * 가중치(weight) ) + bios 
+        float_x1_out =                float_y1_h101*float_weight_bios[48]  
+        float_x1_out = float_x1_out + float_y1_h102*float_weight_bios[49]  
+        float_x1_out = float_x1_out + float_y1_h103*float_weight_bios[50]  
+        float_x1_out = float_x1_out + float_y1_h104*float_weight_bios[51]
+        float_x1_out = float_x1_out + float_y1_h105*float_weight_bios[52]
+        float_x1_out = float_x1_out + float_y1_h106*float_weight_bios[53]
+        float_x1_out = float_x1_out + float_y1_h107*float_weight_bios[54]
+        float_x1_out = float_x1_out + float_y1_h108*float_weight_bios[55]
+        float_x1_out = float_x1_out + float_y1_h109*float_weight_bios[56]
+        float_x1_out = float_x1_out + float_y1_h110*float_weight_bios[57]
+        float_x1_out = float_x1_out + float_y1_h111*float_weight_bios[58]
+        float_x1_out = float_x1_out + float_y1_h112*float_weight_bios[59]
+        float_x1_out = float_x1_out + float_y1_h113*float_weight_bios[60]
+        float_x1_out = float_x1_out + float_y1_h114*float_weight_bios[61]
+        float_x1_out = float_x1_out + float_y1_h115*float_weight_bios[62]
+        float_x1_out = float_x1_out + float_y1_h116*float_weight_bios[63]
+        float_x1_out = float_x1_out + float_weight_bios[64] # bios 
+        
         self.la_x1_out1.setText(format(float_x1_out, ".6f")) 
-
         # la_y1_out1 
         float_y1_out1 = K.sigmoid(float_x1_out)   # sigmoid 함수   
         self.la_y1_out1.setText(format(float_y1_out1, ".6f")) 
-
         # la_target1, la_error1 
+
         if ((float_InData[0] == 0) and (float_InData[1] == 0 )) :  
             self.la_target1.setText("0") 
             error1 = 0 - float_y1_out1 
             self.la_error1.setText(format(error1, ".6f")) 
-
         elif ((float_InData[0] == 1) and (float_InData[1] == 0 )) :  
             self.la_target1.setText("1") 
             error1 = 1 - float_y1_out1 
             self.la_error1.setText(format(error1, ".6f")) 
-
         elif((float_InData[0] == 0) and (float_InData[1] == 1 )) :  
             self.la_target1.setText("1") 
             error1 = 1 - float_y1_out1 
             self.la_error1.setText(format(error1, ".6f")) 
-
         elif((float_InData[0] == 1) and (float_InData[1] == 1 )) :  
             self.la_target1.setText("0") 
             error1 = 0 - float_y1_out1 
             self.la_error1.setText(format(error1, ".6f")) 
-
         else :  
             self.la_target1.setText("0.00") 
             self.la_error1.setText("0.00") 
 
-
-        # This code has any problem that is unknown. 
-        pred1 = fun_XOR.model_predict(float_InData) 
+        ''' # This code has any problem that is unknown. 
+        pred1 = XOR_220722.model_predict(float_InData) 
         self.la_target1.setText(f'{pred1[1]}') 
-        
-
-         
+        #''' 
         # QMessageBox 예제 (양호) 
         dlg = QMessageBox(self) 
         dlg.setWindowTitle("MessageBox : 연산결과") 
         dlg.setText("입력값에 대한 추론(연산)을 완료하였습니다.") 
-        dlg.exec() 
+        dlg.exec_()         
 
     def save_lamda(self, data11):
         # save_lamda_weight(self, data11)함수용 소 
