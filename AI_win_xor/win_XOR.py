@@ -63,7 +63,7 @@ class MainWindow(QMainWindow, Ui_Form):
         fun_XOR.model_2._initial_weights 
 
         global sData 
-        for iCount in range(1,151) :  # range(1,151) => 150회 x 10 = 1500 
+        for iCount in range(1,301) :  # range(1,151) => 150회 x 10 = 1500 
             fun_XOR.fit_model(10) 
             self.display_weights(iCount)  
 
@@ -175,7 +175,7 @@ class MainWindow(QMainWindow, Ui_Form):
         float_x1_out = float_x1_out + float_y1_h115*float_weight_bios[62]
         float_x1_out = float_x1_out + float_y1_h116*float_weight_bios[63]
         float_x1_out = float_x1_out + float_weight_bios[64] # bios 
-        
+
         self.la_x1_out1.setText(format(float_x1_out, ".6f")) 
         # la_y1_out1 
         float_y1_out1 = K.sigmoid(float_x1_out)   # sigmoid 함수   
