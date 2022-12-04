@@ -15,7 +15,7 @@ boolean stringComplete = false;  // whether the string is complete
 
 // Serial Communication Protocal 
 String sC01 = "C01\r\n";  
-String sC02 = "C02\r\n";
+String sC02 = "C02\r\n";  
 String sC03 = "C03\r\n";  
 String sC04 = "C04\r\n";
 
@@ -25,11 +25,19 @@ int iButtonState = 0;         // variable for reading the pushbutton status
 // My Funtions 
 void funCheckComdand(String Cmd); 
 void myfun01(void); 
-  void myfun02(void); 
-  void myfun03(void); 
-  void myfun04(void);
-  void myfun05(void);
+void myfun02(void); 
+void myfun03(void); 
+void myfun04(void);
+void myfun05(void);
 
+void funCheckComdand(String Cmd) 
+{
+  if     ( Cmd == sC01 )   myfun01(); 
+  else if( Cmd == sC02 )   myfun02(); 
+  else if( Cmd == sC03 )   myfun04();
+  else if( Cmd == sC04 )   myfun05();
+  else                     myfun03();      
+} 
 // ------------------------------------------------------------------------------------------------------ 
 
 void setup() { 
@@ -69,14 +77,7 @@ void loop() {
 
 // ------------------------------------------------------------------------------------------------------ 
 
-void funCheckComdand(String Cmd) 
-{
-  if     ( Cmd == sC01 )   myfun01(); 
-  else if( Cmd == sC02 )   myfun02(); 
-  else if( Cmd == sC03 )   myfun04();
-  else if( Cmd == sC04 )   myfun05();
-  else                     myfun03();      
-} 
+
 
 // ------------------------------------------------------------------------------------------------------ 
 
