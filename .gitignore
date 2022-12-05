@@ -4,3 +4,5 @@ AI_win_xor/weights00.txt
 AI_win_xor/str_weights.txt
 Arduino/examination/examination.h
 Arduino/examination/.theia/launch.json
+weights00.txt
+str_weights.txt
