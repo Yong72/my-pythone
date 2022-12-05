@@ -19,21 +19,21 @@ boolean stringComplete = false;  //문자열이 완전한지 확인한다
 
 //시리얼 커뮤니케이션 프로토콜
 //이 템플릿에서 기본적으로 재공하는건 2가지 프로토콜을 재공함.
-String sc01 = "c01\r\n";
-String sc02 = "c02\r\n";
+String sC01 = "C01\r\n";
+String sC02 = "C02\r\n";
 
 int iButtonState = 0;
 
 //이 부분은 없어도 동작 될거같은데 혹시 모르니 넣어둠.
-void funCheck (String Cmd);
+void funCheckComdand(String Cmd);
 void test(void);
 void sos(void);
 void error(void);
 
 //커맨드와 일치하면 함수 호출
-void funCheck (String Cmd) {
-  if      ( Cmd == sc01)  test();
-  else if ( Cmd == sc02)  sos();
+void funCheckComdand (String Cmd) {
+  if      ( Cmd == sC01)  test();
+  else if ( Cmd == sC02)  sos();
   else                    error();
 }
 
@@ -55,8 +55,8 @@ void setup(){
 void loop() { 
   if (Serial.available()) { 
     String sCommand = Serial.readString(); 
-    funCheck(sCommand); 
-  } 
+    funCheckComdand(sCommand); 
+  }
    // 푸시 버튼 값의 상태를 읽습니다.
   iButtonState = digitalRead(sw1);
   if (iButtonState == LOW) {
@@ -93,19 +93,13 @@ void sos() {
 
 //버튼이 ON일때 작동
 void buttonON(){
-  delay(10);
-  digitalWrite(led5, HIGH);
-  delay(250);
-  digitalWrite(led5, LOW);
+  flash(250);
   delay(250);
 }
 
 //버튼이 OFF일때 작동
 void buttonOFF(){
-  delay(10);
-  digitalWrite(led5, HIGH);
-  delay(120);
-  digitalWrite(led5, LOW);
+  flash(120);
   delay(120);
 }
 
